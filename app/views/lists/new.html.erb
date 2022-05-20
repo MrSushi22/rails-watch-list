@@ -1,7 +1,7 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>Ahoy, Me Hearties!</h1>
+<p>📜CREATE A SCROLL📜</p>
 <%= simple_form_for @list do |f|%>
 <%= f.input :name%>
 <%# <%= f.association :movies %>
-<%= f.button :submit, class: 'btn btn-primary'%>
+<%= link_to "🍾", new_list_path, class: "btn btn-info" %>
 <% end %>
