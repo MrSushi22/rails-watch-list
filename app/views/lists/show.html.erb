@@ -6,10 +6,13 @@
 
 
 <ul style="list-style: none">
-  <% @list.movies.each do |movie| %>
-  <li><%= image_tag movie.poster_url, alt: "Poster #{movie.title}", width: 500 %></li>
-  <li style="font-weight: bold"><%=  movie.title %></li>
-  <li><%= movie.overview %></li>
-  <%= link_to 'delete this list', list_path(movie), method: :delete, class: 'btn btn-cancel', data: { confirm: 'Are you sure you want to delete this list?' } %>
+  <% @list.bookmarks.each do |bookmark| %>
+  <li><%= image_tag bookmark.movie.poster_url, alt: "Poster #{bookmark.movie.title}", width: 500 %></li>
+  <li style="font-weight: bold"><%=  bookmark.movie.title %></li>
+  <li><%= bookmark.movie.overview %></li>
+  <li><%= bookmark.comment %></li>
+
+
+  <li><%= link_to "Delete movie", bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' }%></li>
   <% end %>
 </ul>
